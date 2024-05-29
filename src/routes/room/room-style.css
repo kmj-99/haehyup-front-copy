@@ -1,0 +1,34 @@
+/* 페이지 전체를 상대적으로 배치 */
+.Container {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%; /* 원하는 위치로 조정 */
+  left: 85%; /* 원하는 위치로 조정 */
+  transform: translate(-50%, -50%); /* 가운데 정렬 */
+  z-index: 10; /* 다른 요소들 위에 표시되도록 z-index 설정 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+}
+
+.full-height-container {
+  height: 100vh; /* 뷰포트 높이 전체를 차지 */
+  position: relative; /* overlay 절대 위치 기준 설정 */
+}
+
+.full-height-row {
+  flex: 1; /* Row가 부모의 남은 공간을 모두 차지하게 함 */
+  
+  height: 100%; /* Col이 부모인 Row의 높이를 모두 차지하게 함 */
+}
+
+.full-height-col {
+  height: 100%; /* Col이 부모인 Row의 높이를 모두 차지하게 함 */
+  display: flex;
+  flex-direction: column;
+}
+
+.full-height-col > * {
+  flex: 1; /* ThemeComponent가 Col의 높이를 모두 차지하게 함 */
+}
